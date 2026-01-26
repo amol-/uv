@@ -234,11 +234,7 @@ fn install_hardlink_with_link_limit() -> Result<()> {
         let venv_path = context.temp_dir.child(format!("venv{i}"));
 
         // Create a new venv
-        context
-            .venv()
-            .arg(venv_path.path())
-            .assert()
-            .success();
+        context.venv().arg(venv_path.path()).assert().success();
 
         // Install the package with hardlink mode and link limit
         context
